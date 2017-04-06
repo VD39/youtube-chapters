@@ -11,6 +11,8 @@ YouTube chapters generator will automatically generate chapters for you based on
 
 Begin by adding these tags to your document's `<head>`:
 
+> Found in the app/assets folder.
+
 ```html
 <link href="./path/to/youtube-chapters.min.css" rel="stylesheet">
 <script src="./path/to/youtube-chapters.min.js"></script>
@@ -106,7 +108,7 @@ Sets the chapters of the YouTube video.
 
 > Type: `string`
 
-Sets the time of the current chapter. You may use two format for this, hms and h:m:s. If you set `showTime` to true, then the time will appear as is. So if you use hms ensure you add a space between each time.
+Sets the time of the current chapter. You may use two format for this, hms and hh:mm:ss. If you set `showTime` to true, then the time will appear as is. So if you use hms ensure you add a space between each time.
 
 ```js
 'time': '0m 0s' //better to use 1h 0m 0s rather than 1h0m0s
