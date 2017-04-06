@@ -1,0 +1,11 @@
+/*!
+ * youtube-chapters
+ * A YouTube chapter generator
+ * 
+ * @author Vijay Dubb
+ * @version 2.0.0
+ * Copyright 2013. MIT licensed.
+ */
+
+.fluid-wrapper{position:relative;padding-bottom:56.25%;padding-top:25px;height:0}.fluid-wrapper iframe{position:absolute;top:0;left:0;width:100%;height:100%}div[class*="chapters-wrapper"]{border:1px solid #ccc}div[class*="chapters-wrapper"] div[class*="chapter-"]{border-top:1px solid #ccc}div[class*="chapters-wrapper"] div[class*="chapter-"]:first-child{border-top-width:0}div[class*="chapters-wrapper"] div[class*="chapter-"]:nth-child(even) .chapter-point{background-color:#F9F9F9}div[class*="chapters-wrapper"] div[class*="chapter-"] .chapter-point{display:block;padding:10px 55px 10px 15px;text-decoration:none;color:#000000;position:relative;cursor:pointer}div[class*="chapters-wrapper"] div[class*="chapter-"] .chapter-point:hover{background-color:#F5F5F5}div[class*="chapters-wrapper"] div[class*="chapter-"] .chapter-point.current{background-color:#9f9f9f}div[class*="chapters-wrapper"] div[class*="chapter-"] .time{float:right;position:absolute;right:10px}
+/*# sourceMappingURL=youtube-chapters.min.css.map */
