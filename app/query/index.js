@@ -1,5 +1,5 @@
 //jQuery clone to suit purpose of element building
-class $_ {
+class Q {
 
   constructor(element) {
     if (Array.isArray(element)) {
@@ -45,7 +45,7 @@ class $_ {
         }
       }
     }
-    return new $_(results);
+    return new Q(results);
   }
 
   addEvent(eventName, eventHandler) {
@@ -124,9 +124,9 @@ class $_ {
   }
 
 
-  static Query(element) {
-    return new $_(element);
+  static findSelector(element) {
+    return new Q(element);
   }
 }
 
-export default $_;
+export default Q.findSelector;

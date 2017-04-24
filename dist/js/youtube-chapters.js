@@ -122,7 +122,7 @@ var YouTubeChapters = exports.YouTubeChapters = function () {
       throw new Error('Element has not been set, please set an element.');
     }
 
-    if (_query2.default.Query(this.element).length < 1) {
+    if ((0, _query2.default)(this.element).length < 1) {
       throw new Error('Element ' + this.element + ' does not exsit.');
     }
 
@@ -158,7 +158,7 @@ var YouTubeChapters = exports.YouTubeChapters = function () {
   }, {
     key: '_buildStruture',
     value: function _buildStruture() {
-      var mainElement = _query2.default.Query(this.element);
+      var mainElement = (0, _query2.default)(this.element);
 
       mainElement.addElement('div', {
         'class': 'loading'
@@ -201,7 +201,7 @@ var YouTubeChapters = exports.YouTubeChapters = function () {
         _this.seekTo(event.currentTarget.getAttribute('data-time'));
       };
 
-      var chaptersWrapper = _query2.default.Query('#chapters-wrapper-' + this.randomNumber);
+      var chaptersWrapper = (0, _query2.default)('#chapters-wrapper-' + this.randomNumber);
 
       var _iteratorNormalCompletion = true;
       var _didIteratorError = false;
@@ -244,7 +244,7 @@ var YouTubeChapters = exports.YouTubeChapters = function () {
   }, {
     key: '_addTextPoints',
     value: function _addTextPoints() {
-      var textWrapper = _query2.default.Query('#text-wrapper-' + this.randomNumber);
+      var textWrapper = (0, _query2.default)('#text-wrapper-' + this.randomNumber);
       var _iteratorNormalCompletion2 = true;
       var _didIteratorError2 = false;
       var _iteratorError2 = undefined;
@@ -330,7 +330,7 @@ var YouTubeChapters = exports.YouTubeChapters = function () {
   }, {
     key: 'complete',
     value: function complete() {
-      var element = _query2.default.Query(this.element);
+      var element = (0, _query2.default)(this.element);
 
       var iframeHeight = element.find('#youtube-video-' + this.randomNumber).height();
 
@@ -355,11 +355,11 @@ var YouTubeChapters = exports.YouTubeChapters = function () {
 
       var onStateChange = function onStateChange(event) {
 
-        var chapters = _query2.default.Query(_this3.element + ' .chapter-point-wrapper');
+        var chapters = (0, _query2.default)(_this3.element + ' .chapter-point-wrapper');
 
         var playing = function playing() {
           chapters.each(function (index, element) {
-            var textPoint = _query2.default.Query('#' + element.getAttribute('id').replace('chapter', 'text-point'));
+            var textPoint = (0, _query2.default)('#' + element.getAttribute('id').replace('chapter', 'text-point'));
 
             var time = parseFloat(element.getAttribute('data-time'));
             var next = void 0;
@@ -668,9 +668,9 @@ var _createClass = function () { function defineProperties(target, props) { for 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 //jQuery clone to suit purpose of element building
-var $_ = function () {
-  function $_(element) {
-    _classCallCheck(this, $_);
+var Q = function () {
+  function Q(element) {
+    _classCallCheck(this, Q);
 
     if (Array.isArray(element)) {
       this.element = element;
@@ -687,7 +687,7 @@ var $_ = function () {
     this.length = this.element.length;
   }
 
-  _createClass($_, [{
+  _createClass(Q, [{
     key: "addElement",
     value: function addElement(tag, object, text) {
       var crEl = document.createElement(tag);
@@ -718,7 +718,7 @@ var $_ = function () {
           }
         }
       }
-      return new $_(results);
+      return new Q(results);
     }
   }, {
     key: "addEvent",
@@ -804,16 +804,16 @@ var $_ = function () {
       return this.element[0].innerHTML.trim() === "";
     }
   }], [{
-    key: "Query",
-    value: function Query(element) {
-      return new $_(element);
+    key: "findSelector",
+    value: function findSelector(element) {
+      return new Q(element);
     }
   }]);
 
-  return $_;
+  return Q;
 }();
 
-exports.default = $_;
+exports.default = Q.findSelector;
 module.exports = exports['default'];
 
 /***/ })

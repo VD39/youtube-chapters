@@ -5,7 +5,7 @@ import {
   convertTime,
   sort
 } from '../helper-functions';
-import $_ from '../query';
+import Q from '../query';
 
 let elements = [];
 let players = [];
@@ -28,7 +28,7 @@ export class YouTubeChapters {
       throw new Error('Element has not been set, please set an element.');
     }
 
-    if ($_.Query(this.element).length < 1) {
+    if (Q(this.element).length < 1) {
       throw new Error(`Element ${this.element} does not exsit.`);
     }
 
@@ -64,7 +64,7 @@ export class YouTubeChapters {
   }
 
   _buildStruture() {
-    const mainElement = $_.Query(this.element);
+    const mainElement = Q(this.element);
 
     mainElement
       .addElement('div', {
@@ -119,7 +119,7 @@ export class YouTubeChapters {
       this.seekTo(event.currentTarget.getAttribute('data-time'));
     };
 
-    var chaptersWrapper = $_.Query(`#chapters-wrapper-${this.randomNumber}`);
+    var chaptersWrapper = Q(`#chapters-wrapper-${this.randomNumber}`);
 
     for (const current of this.ytc.options.chapters) {
       chaptersWrapper
@@ -147,7 +147,7 @@ export class YouTubeChapters {
   }
 
   _addTextPoints() {
-    var textWrapper = $_.Query(`#text-wrapper-${this.randomNumber}`);
+    var textWrapper = Q(`#text-wrapper-${this.randomNumber}`);
     for (const current of this.ytc.options.chapters) {
       textWrapper
         .addElement('li', {
@@ -191,7 +191,7 @@ export class YouTubeChapters {
   }
 
   complete() {
-    const element = $_.Query(this.element);
+    const element = Q(this.element);
 
     const iframeHeight = element
       .find(`#youtube-video-${this.randomNumber}`)
@@ -223,11 +223,11 @@ export class YouTubeChapters {
 
     const onStateChange = event => {
 
-      const chapters = $_.Query(`${this.element} .chapter-point-wrapper`);
+      const chapters = Q(`${this.element} .chapter-point-wrapper`);
 
       const playing = () => {
         chapters.each((index, element) => {
-          const textPoint = $_.Query(`#${element.getAttribute('id').replace('chapter', 'text-point')}`);
+          const textPoint = Q(`#${element.getAttribute('id').replace('chapter', 'text-point')}`);
 
           const time = parseFloat(element.getAttribute('data-time'));
           let next;
