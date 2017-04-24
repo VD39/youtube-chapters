@@ -163,5 +163,6 @@ Sets the optional supporting text for the current chapter.
 ```diff
 New features to come:
 - NPM support
+- Chaining and ready function
 - New theme
 ```
