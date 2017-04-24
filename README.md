@@ -1,13 +1,27 @@
 # youtube-chapter-generator 
 YouTube chapters generator will automatically generate chapters for you based on an object of set times.
 
+## [View a working example](https://run.plnkr.co/DtBNWzAIAlFH775w/)
+
 ```diff
-- NOTE: THIS IS ONLY WORKING WITH ONE YOUTUBE VIDEO ON ONE PAGE, UPDATES ARE COMING
+New Features:
++ Updated to use ES6
++ Now supports multiple YouTube chapters
++ New optional supporting text feature
++ New layout
 ```
 
 # Quick Start
 
 ## JavaScript
+
+### ES6
+
+```js
+import YTC from '/path/to/youtube-chapters';
+```
+
+### ES5
 
 Begin by adding these tags to your document's `<head>`:
 
@@ -18,12 +32,22 @@ Begin by adding these tags to your document's `<head>`:
 <script src="./path/to/youtube-chapters.min.js"></script>
 ```
 
-Next, just create a simple `<div>` element, but with an additional `id` or `class` attribute.
+### HTML
+
+Next, just create a simple `<div>` element, but with an additional `id` or `class` attribute. 
+
+```diff
+- NOTE: Using a class will only render this for one element, I recommend you use `id` every time.
+```
+
 ```html
 <div id="player"></div>
 ```
 
-To initialize the setup use the YTC function and pass in the element and options:
+### Initialise
+
+To initialise the setup use the YTC function and pass in the element and options:
+
 ```js
 var options = {
   youtubeId: 'ZyvwODEjmXw',
@@ -41,12 +65,14 @@ var options = {
     {
       'time': '0m 0s',
       'title': '01 - Advent Rising - Muse',
-      'id': 'id1'
+      'id': 'id1',
+      'text': '01 - Advent Rising - Muse'
     },
     {
       'time': '03:43',
       'title': '02 - Legend of Zelda - Suite',
-      'id': 'id2'
+      'id': 'id2',
+      'text': ''
     }
   ]
 };
@@ -70,7 +96,7 @@ Sets the YouTube video based on the ID.
 
 > Type: `boolean` Default: `false`
 
-Sets if the YouTube video should be fluid/responseive.
+Sets if the YouTube video should be fluid/responsive.
 
 ### `width`
 
@@ -94,7 +120,7 @@ Sets the YouTube playerVars, refer to the [YouTube API refrence](https://develop
 
 > Type: `boolean` Default `false`
 
-Sets if the times should appear in the chapater elements
+Sets if the times should appear in the chapter elements
 
 ### `chapters`
 
@@ -128,6 +154,14 @@ Sets the title of the current chapter.
 
 Sets the id of the current chapter.
 
+#### `text`
+
+> Type: `string` 
+
+Sets the optional supporting text for the current chapter.
+
 ```diff
-- New features are coming soon.
+New features to come:
+- NPM support
+- New theme
 ```
