@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 config.output.filename = 'js/youtube-chapters.min.js';
+config.plugins = [];
 config.plugins.push(
     new webpack.optimize.UglifyJsPlugin({
         minimize: true
