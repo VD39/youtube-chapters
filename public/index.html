@@ -8,10 +8,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link href="assets/css/youtube-chapters.min.css" rel="stylesheet">
+  <link href="./css/youtube-chapters.css" rel="stylesheet">
   <style>
-    #player {
+    .wrapper {
       margin: auto;
+      width: 900px;
     }
   </style>
 
@@ -23,7 +24,8 @@
     <div id="player"></div>
   </div>
 
-  <script src="assets/js/youtube-chapters.min.js"></script>
+  <script src="./js/youtube-chapters.js"></script>
+
   <script>
     var options = {
       youtubeId: 'ZyvwODEjmXw',
@@ -39,20 +41,22 @@
       showTime: true,
       chapters: [
         {
-          'time': '0s',
+          'time': '0m 0s',
           'title': '01 - Advent Rising - Muse',
-          'id': 'id1'
+          'id': 'id1',
+          'text': '01 - Advent Rising - Muse'
         },
         {
           'time': '03:43',
           'title': '02 - Legend of Zelda - Suite',
-          'id': 'id2'
+          'id': 'id2',
+          'text': ''
         }
       ]
     };
+
     YTC('#player', options);
   </script>
-
 </body>
 
 </html>
