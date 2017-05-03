@@ -1,46 +1,60 @@
 {
-  "extends": "eslint:recommended",
+  "extends": "airbnb",
+  "parser": "babel-eslint",
   "env": {
-    "browser": true,
     "commonjs": true,
-    "node": true,
-    "es6": true
+    "browser": true,
+    "es6": true,
+    "node": true
   },
   "globals": {
-    "elements": 1,
-    "YT": 1,
-    "_interval": 1
+    "elements": true,
+    "YT": true,
+    "_interval": true
   },
-  "parserOptions": {
-    "ecmaVersion": 6,
-    "sourceType": "module"
+  "plugins": [
+    "import",
+    "promise",
+    "compat",
+    "react"
+  ],
+  "ecmaFeatures": {
+    "jsx": true,
+    "modules": true
   },
   "rules": {
-    "no-console": 0,
-    "no-debugger": 1,
-    "eqeqeq": 1,
-    "key-spacing": 0,
-    "new-cap": 0,
-    "strict": [
-      "error",
-      "global"
+    "arrow-parens": [
+      "off"
     ],
-    "no-underscore-dangle": 0,
-    "no-use-before-define": 0,
-    "eol-last": 0,
-    "quotes": 0,
-    "semi": 0,
-    "space-infix-ops": 0,
-    "no-trailing-spaces": 0,
-    "no-multi-spaces": 0,
-    "no-alert": 0,
-    "no-undef": 2,
-    "no-unused-vars": [
-      1,
+    "compat/compat": 2,
+    "consistent-return": "off",
+    "comma-dangle": "off",
+    "generator-star-spacing": "off",
+    "import/no-unresolved": [
+      "error",
       {
-        "vars": "local",
-        "args": "none"
+        "ignore": [
+          "electron"
+        ]
       }
-    ]
+    ],
+    "linebreak-style": [
+      "error",
+      "windows"
+    ],
+    "import/no-extraneous-dependencies": "off",
+    "no-use-before-define": "off",
+    "promise/param-names": 2,
+    "promise/always-return": 2,
+    "promise/catch-or-return": 2,
+    "promise/no-native": 0,
+    "no-underscore-dangle": 0,
+    "no-param-reassign": [
+      "error",
+      {
+        "props": false
+      }
+    ],
+    "import/prefer-default-export": 0
   }
 }

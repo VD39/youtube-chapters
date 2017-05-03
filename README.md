@@ -1,24 +1,30 @@
-# YouTube Chapter Generator 
+# youtube-chapter-generator
 YouTube chapters generator will automatically generate chapters for you based on an object of set times.
 
-## [View a working example](https://run.plnkr.co/plunks/olGqINY3BibhE8WWCCG4/)
+## [View a working example](https://run.plnkr.co/DtBNWzAIAlFH775w/)
 
 ```diff
 New Features:
-+ Updated to use ES6
-+ Now supports multiple YouTube chapters
-+ New optional supporting text feature
-+ New layout
++ NPM install
++ Chaining methods
++ New ready method
 ```
 
 # Quick Start
+
+## Install
+
+```sh
+npm i youtube-chapters --save
+```
 
 ## JavaScript
 
 ### ES6
 
 ```js
-import YTC from '/path/to/youtube-chapters';
+import '../node_modules/youtube-chapters/dist/css/youtube-chapters.css';
+import YTC from '../node_modules/youtube-chapters/dist/js/youtube-chapters';
 ```
 
 ### ES5
@@ -34,7 +40,7 @@ Begin by adding these tags to your document's `<head>`:
 
 ### HTML
 
-Next, just create a simple `<div>` element, but with an additional `id` or `class` attribute. 
+Next, just create a simple `<div>` element, but with an additional `id` or `class` attribute.
 
 ```diff
 - NOTE: Using a class will only render this for one element, I recommend you use `id` every time.
@@ -51,6 +57,8 @@ To initialise the setup use the YTC function and pass in the element and options
 ```js
 var options = {
   youtubeId: 'ZyvwODEjmXw',
+  id: 'soundtrack',
+  loadingText: '<p>Loading text</p>',
   fluid: true,
   width: '500px',
   height: '150px',
@@ -92,6 +100,18 @@ Note: All options have a set default.
 
 Sets the YouTube video based on the ID.
 
+### `id`
+
+> Type: `string` Default: `random number`
+
+Sets the ID to be used, set this if you want to manipulate the DOM as a random number will be set every time.
+
+### `loadingText`
+
+> Type: `string`
+
+Sets loading HTML/string text, visible while the video is loading.
+
 ### `fluid`
 
 > Type: `boolean` Default: `false`
@@ -114,13 +134,13 @@ Sets the video height.
 
 > Type: `object` Default `{}`
 
-Sets the YouTube playerVars, refer to the [YouTube API refrence](https://developers.google.com/youtube/iframe_api_reference)
+Sets the YouTube playerVars, refer to the [YouTube API refrence](https://developers.google.com/youtube/iframe_api_reference).
 
 ### `showTime`
 
 > Type: `boolean` Default `false`
 
-Sets if the times should appear in the chapter elements
+Sets if the times should appear in the chapter elements.
 
 ### `chapters`
 
@@ -144,25 +164,106 @@ Sets the time of the current chapter. You may use two format for this, hms and h
 
 #### `title`
 
-> Type: `string`  
+> Type: `string`
 
 Sets the title of the current chapter.
 
 #### `id`
 
-> Type: `string` 
+> Type: `string`
 
 Sets the id of the current chapter.
 
 #### `text`
 
-> Type: `string` 
+> Type: `string`
 
 Sets the optional supporting text for the current chapter.
 
+## Methods
+
+### `ready(callback)`
+
+Ready function to call once the video has loaded.
+
+Here you can manipulate the DOM and get access to the YouTube player.
+
+```js
+YTC(element, options)
+  .ready(function (player) {
+    ....
+  });
+
+or
+
+let player = new YTC();
+player.ready(function (player) {
+  ....
+});
+```
+
+### `goToChatperId(id)`
+
+Goes to the video position of the chapter ID.
+
+```js
+YTC(element, options)
+  .goToChatperId('id1');
+
+or
+
+let player = new YTC();
+player.goToChatperId('id1');
+```
+
+### `seekTo(seekToTime)`
+
+Goes to the position of the YouTube video.
+
+```js
+YTC(element, options)
+  .seekTo('03:43'); or
+  .seekTo('2m 0s'); or
+  .seekTo(67);
+
+or
+
+let player = new YTC(element, options);
+player.seekTo('03:43'); or
+player.seekTo('2m 0s'); or
+player.seekTo(67);
+```
+
+### `play`
+
+Plays the YouTube video.
+
+```js
+YTC(element, options)
+  .play();
+
+or
+
+let player = YTC(element, options);
+player.play();
+```
+
+### `pause`
+
+Pauses the YouTube video.
+
+```js
+YTC(element, options)
+  .pause();
+
+or
+
+let player = YTC(element, options);
+pause.play();
+```
+
 ```diff
 New features to come:
-- NPM support
-- Chaining and ready function
 - New theme
+- Responsive layout
 ```

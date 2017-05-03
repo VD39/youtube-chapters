@@ -1,3 +1,12 @@
+/*!
+ * youtube-chapters
+ * A YouTube chapter generator
+ * https://github.com/VD39/youtube-chapters
+ * @author Vijay Dubb
+ * @version 3.1.0
+ * Copyright 2013. MIT licensed.
+ */
+
 /*---- Reset all styles ----*/
 * {
   margin: 0;
@@ -24,6 +33,64 @@ section,
 img,
 video {
   display: block; }
+
+.loading {
+  position: absolute; }
+  .loading .loading-wrapper {
+    position: relative;
+    background: #f1f1f1;
+    height: 150px; }
+    .loading .loading-wrapper:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: 999;
+      width: 150px;
+      border: solid 10px #ffffff;
+      -webkit-transform: translate(-50%, -50%);
+              transform: translate(-50%, -50%); }
+    .loading .loading-wrapper:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 15px;
+      height: 15px;
+      z-index: 999;
+      background: royalblue;
+      -webkit-animation-name: loading-youtube-video;
+              animation-name: loading-youtube-video;
+      -webkit-animation-duration: .5s;
+              animation-duration: .5s;
+      -webkit-animation-direction: alternate;
+              animation-direction: alternate;
+      -webkit-animation-timing-function: ease-in-out;
+              animation-timing-function: ease-in-out;
+      -webkit-animation-iteration-count: infinite;
+              animation-iteration-count: infinite; }
+    .loading .loading-wrapper .loading-text {
+      position: absolute;
+      top: 70%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+              transform: translate(-50%, -50%); }
+
+@-webkit-keyframes loading-youtube-video {
+  0% {
+    -webkit-transform: translate(-72.5px, -7.5px);
+            transform: translate(-72.5px, -7.5px); }
+  100% {
+    -webkit-transform: translate(58.5px, -7.5px);
+            transform: translate(58.5px, -7.5px); } }
+
+@keyframes loading-youtube-video {
+  0% {
+    -webkit-transform: translate(-72.5px, -7.5px);
+            transform: translate(-72.5px, -7.5px); }
+  100% {
+    -webkit-transform: translate(58.5px, -7.5px);
+            transform: translate(58.5px, -7.5px); } }
 
 .youtube-chapter-wrapper {
   visibility: hidden;
