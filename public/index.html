@@ -22,6 +22,7 @@
 
   <div class="wrapper">
     <div id="player"></div>
+    <div id="player1"></div>
   </div>
 
   <script src="./js/youtube-chapters.js"></script>
@@ -29,6 +30,8 @@
   <script>
     var options = {
       youtubeId: 'ZyvwODEjmXw',
+      id: '',
+      loadingFrame: '',
       fluid: true,
       width: '500px',
       height: '150px',
@@ -55,7 +58,26 @@
       ]
     };
 
-    YTC('#player', options);
+    YTC('#player', options)
+    YTC('#player1', options)
+
+      // .seekTo('03:43');
+    // .seekTo('0m 0s');
+    //   .onReady(function (player) {
+
+    //     //add set option to add user own random number
+    //     document.querySelectorAll('.chapter-point')[1].style.backgroundColor = 'red';
+    //   })
+    //   .play()
+    //   .pause();
+
+    // YTC('#player1', options)
+    //   .onReady(function (player) {
+
+    //     //add set option to add user own random number
+    //     document.querySelectorAll('.chapter-point')[1].style.backgroundColor = 'red';
+    //   })
+    //   .play();
   </script>
 </body>
 

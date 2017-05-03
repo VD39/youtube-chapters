@@ -1,11 +1,13 @@
 {
   "name": "youtube-chapters",
   "title": "A YouTube chapter generator",
-  "url": "",
+  "description": "A chapters markers generator plugin for a YouTube video, built using JavaScript.",
+  "url": "https://github.com/VD39/youtube-chapters",
   "author": "Vijay Dubb",
   "copyright": "2013",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "license": "MIT",
+  "main": "dist/js/youtube-chapters.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/VD39/youtube-chapters.git"
@@ -28,6 +30,13 @@
     "babel-preset-es2015": "^6.24.0",
     "css-loader": "^0.27.3",
     "eslint": "^3.18.0",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-formatter-pretty": "^1.1.0",
+    "eslint-plugin-compat": "^0.1.1",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "2.2.3",
+    "eslint-plugin-promise": "^3.4.0",
+    "eslint-plugin-react": "^6.8.0",
     "eslint-loader": "1.6.1",
     "extract-text-webpack-plugin": "^2.1.0",
     "file-loader": "^0.10.1",
@@ -43,6 +52,8 @@
   "keywords": [
     "YouTube",
     "Chapters",
-    "Markers"
+    "Markers",
+    "YouTube Chapters",
+    "Youtube Markers"
   ]
 }

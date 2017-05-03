@@ -1,0 +1,47 @@
+.loading {
+    position: absolute;
+    .loading-wrapper {
+        position: relative;
+        background: #f1f1f1;
+        height: 150px;
+        &:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            z-index: 999;
+            width: 150px;
+            border: solid 10px #ffffff;
+            transform: translate(-50%, -50%);
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 15px;
+            height: 15px;
+            z-index: 999;
+            background: royalblue;
+            animation-name: loading-youtube-video;
+            animation-duration: .5s;
+            animation-direction: alternate;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+        }
+        .loading-text {
+            position: absolute;
+            top: 70%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+    @keyframes loading-youtube-video {
+        0% {
+            transform: translate(-72.5px, -7.5px);
+        }
+        100% {
+            transform: translate(58.5px, -7.5px);
+        }
+    }
+}
