@@ -24,7 +24,7 @@ npm i youtube-chapters --save
 
 ```js
 import '../node_modules/youtube-chapters/dist/css/youtube-chapters.css';
-import YTC from '../node_modules/youtube-chapters/dist/js/youtube-chapters';
+import YTC from 'youtube-chapters';
 ```
 
 ### ES5
