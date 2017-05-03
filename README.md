@@ -234,7 +234,7 @@ player.seekTo('2m 0s'); or
 player.seekTo(67);
 ```
 
-### `play`
+### `play()`
 
 Plays the YouTube video.
 
@@ -248,7 +248,7 @@ let player = YTC(element, options);
 player.play();
 ```
 
-### `pause`
+### `pause()`
 
 Pauses the YouTube video.
 
