@@ -1,4 +1,4 @@
-# youtube-chapter-generator
+# A Youtube Chapter Generator
 YouTube chapters generator will automatically generate chapters for you based on an object of set times.
 
 ## [View a working example](https://run.plnkr.co/plunks/olGqINY3BibhE8WWCCG4/)
